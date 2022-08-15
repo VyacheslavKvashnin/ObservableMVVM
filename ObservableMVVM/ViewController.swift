@@ -8,12 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var label: UILabel!
+    
+    var viewModel: ViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+     
+        
     }
-
-
+    @IBAction func button(_ sender: Any) {
+        
+    }
 }
 
+extension ViewController {
+    static func instantiate(storyboardName: String = "Main") -> Self {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        return storyboard.instantiateInitialViewController() as! Self
+    }
+}
