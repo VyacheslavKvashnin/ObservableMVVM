@@ -16,10 +16,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        
+        setBinding()
     }
+    
+    func setBinding() {
+        viewModel.name.bind { name in
+            self.label.text = name
+        }
+    }
+    
     @IBAction func button(_ sender: Any) {
-        
+        viewModel.showData()
     }
 }
 
